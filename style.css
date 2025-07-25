@@ -9,10 +9,12 @@ body {
 
 a{
     text-decoration: none;
+    color: #ff9100;
 }
 
 header a img{
     height: 4rem;
+    margin: 5px;
 }
 
 header a{
@@ -29,6 +31,7 @@ header {
     display: flex;
     flex-direction: row;
     border-bottom: 0.2px solid #ff9100;
+    height: 15%;
 }
 
 h1{
@@ -41,7 +44,6 @@ h2{
 
 h3{
     font-size: 2em;
-    text-decoration: underline;
 }
 
 .link a {
@@ -78,12 +80,8 @@ article {
     margin-left: 50px;
 }
 
-article h3{
-    text-decoration: underline;
-}
-
-strong {
-    text-decoration: underline;
+.boutton {
+    margin: 20px;
 }
 
 .margin {
@@ -103,12 +101,14 @@ strong {
     background-repeat: no-repeat;
     height: 91vh;
     padding-left: 100px;
+    width: 100%;
 }
 
 .sombre{
     background-color: #0000003f;
     color: white;
     height: 100%;
+    width: 100%;
     padding-top: 80px;
 }
 
