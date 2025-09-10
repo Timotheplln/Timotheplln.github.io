@@ -22,7 +22,7 @@ header a{
 }
 
 header {
-    position: fixed;
+    position:sticky;
     z-index: 1;
     background-color: #222;
     top: 0;
@@ -31,7 +31,7 @@ header {
     display: flex;
     flex-direction: row;
     border-bottom: 0.2px solid #ff9100;
-    height: 15%;
+    height: fit-content;
 }
 
 h1{
@@ -62,7 +62,7 @@ h3{
 }
 
 main{
-    margin-top: 4rem;
+    margin-top: header height;
 }
 
 main > ul {
@@ -99,7 +99,7 @@ article {
     background-size: cover;
     background-position-x: center;
     background-repeat: no-repeat;
-    height: 91vh;
+    height: 85%;
     padding-left: 100px;
     width: 100%;
 }
@@ -107,9 +107,8 @@ article {
 .sombre{
     background-color: #0000003f;
     color: white;
-    height: 100%;
     width: 100%;
-    padding-top: 80px;
+    padding-top: 50px;
 }
 
 .horizon{
