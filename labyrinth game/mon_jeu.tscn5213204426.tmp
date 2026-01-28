@@ -1,0 +1,921 @@
+[gd_scene load_steps=90 format=3 uid="uid://b8csd07pc1csh"]
+
+[ext_resource type="Script" uid="uid://y7xo5mov64st" path="res://maze.gd" id="1_23pqe"]
+[ext_resource type="Script" uid="uid://dwyqsma5wq48m" path="res://buddy.gd" id="1_tn8jo"]
+[ext_resource type="Texture2D" uid="uid://c7vbf7pb57cia" path="res://background.png" id="2_a6qka"]
+[ext_resource type="Script" uid="uid://cqvywkgg7bb78" path="res://camera_2_dseparated.gd" id="4_m8yi8"]
+[ext_resource type="Texture2D" uid="uid://bxkflt6pk3alw" path="res://empty_key_sprite.png" id="5_rjkov"]
+[ext_resource type="Texture2D" uid="uid://c5hg7u8vqknsh" path="res://locked_door.png" id="5_yb2iy"]
+[ext_resource type="Script" uid="uid://d35lk44aegk7x" path="res://pause_menu.gd" id="6_l7tpm"]
+[ext_resource type="Texture2D" uid="uid://hvgmhs8sijm4" path="res://full_key_sprite.png" id="6_qjws7"]
+[ext_resource type="Texture2D" uid="uid://cjdwt4uga72ou" path="res://key_frag1_sprite.png" id="7_yb2iy"]
+[ext_resource type="Texture2D" uid="uid://c3pqanku0v6vp" path="res://key_frag2_sprite.png" id="8_anqga"]
+[ext_resource type="Texture2D" uid="uid://djkoib14t6af2" path="res://prototype_character_dedframe1.png" id="8_uwtyj"]
+[ext_resource type="Theme" uid="uid://cv2gw47fc1rb1" path="res://button theme.tres" id="8_wjcpq"]
+[ext_resource type="Texture2D" uid="uid://dnoquixmdjslw" path="res://key_frag3_sprite.png" id="9_n0q3m"]
+[ext_resource type="Texture2D" uid="uid://bip7eaole1ym3" path="res://prototype_character_dedframe2.png" id="9_r2nun"]
+[ext_resource type="Texture2D" uid="uid://brh2i8sxa8pni" path="res://prototype_character_dedframe3.png" id="10_e3ork"]
+[ext_resource type="Texture2D" uid="uid://bvhw7m3ieght3" path="res://key_frag4_sprite.png" id="10_p3kr3"]
+[ext_resource type="Texture2D" uid="uid://cqjy2u2t3rg24" path="res://prototype_character_dedframe4.png" id="11_0eiks"]
+[ext_resource type="Texture2D" uid="uid://cvs5giqmgwpir" path="res://key_frag5_sprite.png" id="11_ydcu3"]
+[ext_resource type="Texture2D" uid="uid://csmf4j5nc3wkd" path="res://prototype_character_spitedown1.png" id="12_vw27k"]
+[ext_resource type="Texture2D" uid="uid://nijyeid15b0k" path="res://prototype_character_spitedown2.png" id="13_uobwo"]
+[ext_resource type="Texture2D" uid="uid://t8702j05cuu5" path="res://prototype_character_spitedown3.png" id="14_qap70"]
+[ext_resource type="Texture2D" uid="uid://264fykabw40p" path="res://prototype_ghost_down.png" id="15_kkvae"]
+[ext_resource type="Texture2D" uid="uid://d3dq3qybcbaur" path="res://prototype_character_spiteleft1.png" id="15_qbrjb"]
+[ext_resource type="Texture2D" uid="uid://dkmex6hlw5jsc" path="res://prototype_character_spiteleft2.png" id="16_kkvae"]
+[ext_resource type="Texture2D" uid="uid://da4fwb673hbib" path="res://prototype_ghost_down2.png" id="16_pvaed"]
+[ext_resource type="Script" uid="uid://do0phxv7ytyi6" path="res://camera.gd" id="17_23pqe"]
+[ext_resource type="Texture2D" uid="uid://g3cr8uwtocss" path="res://prototype_character_spiteleft3.png" id="17_pvaed"]
+[ext_resource type="Texture2D" uid="uid://fnqxwu783f28" path="res://prototype_character_spiteleft4.png" id="18_rjkov"]
+[ext_resource type="Texture2D" uid="uid://bnhkpemtuhgak" path="res://bigwall.png" id="18_ulosa"]
+[ext_resource type="Texture2D" uid="uid://cs0foido32237" path="res://prototype_character_spiteright1.png" id="19_v5gie"]
+[ext_resource type="Texture2D" uid="uid://b2fkvmrb058ss" path="res://prototype_character_spiteright2.png" id="20_dayq3"]
+[ext_resource type="Texture2D" uid="uid://co060hl3elo3d" path="res://flag.png" id="20_m8yi8"]
+[ext_resource type="Texture2D" uid="uid://drwdphxutsm3p" path="res://prototype_ghost_left.png" id="21_rjkov"]
+[ext_resource type="Texture2D" uid="uid://blu5y63x1rxyn" path="res://prototype_character_spiteright3.png" id="21_wwis2"]
+[ext_resource type="Texture2D" uid="uid://choee17smse6v" path="res://prototype_ghost_left2.png" id="22_v5gie"]
+[ext_resource type="Texture2D" uid="uid://ci8asnbolc7a8" path="res://prototype_character_spiteright4.png" id="22_vdp5t"]
+[ext_resource type="Texture2D" uid="uid://dc06r4i6ixwyx" path="res://prototype_character_spiteup1.png" id="23_3q6up"]
+[ext_resource type="Texture2D" uid="uid://dty1fq8sy7pxl" path="res://prototype_character_spiteup2.png" id="24_qjws7"]
+[ext_resource type="Texture2D" uid="uid://kiivp27ebb5t" path="res://prototype_character_spiteup3.png" id="25_yb2iy"]
+[ext_resource type="Texture2D" uid="uid://cqbkv5vor11nj" path="res://prototype_ghost_right.png" id="27_dayq3"]
+[ext_resource type="Texture2D" uid="uid://bkf3x5ptrla8" path="res://prototype_ghost_right2.png" id="28_wwis2"]
+[ext_resource type="Texture2D" uid="uid://bkclpkg0vi6ux" path="res://prototype_ghost_up.png" id="32_vdp5t"]
+[ext_resource type="Texture2D" uid="uid://cfouwkh44ivjh" path="res://prototype_ghost_up2.png" id="33_3q6up"]
+[ext_resource type="Script" uid="uid://cqmwva4awon3w" path="res://ghost.gd" id="34_pvaed"]
+[ext_resource type="Texture2D" uid="uid://dl2naai83g3yr" path="res://key_frag1_mini.png" id="43_blkcc"]
+[ext_resource type="Script" uid="uid://coh5d6hyq2whs" path="res://footstep_timer.gd" id="44_5roy8"]
+[ext_resource type="Texture2D" uid="uid://dy7b5fp1iwjgs" path="res://arrow.png" id="44_42f15"]
+[ext_resource type="Texture2D" uid="uid://c0k4t4yw22sxm" path="res://key_frag2_mini.png" id="44_l7tpm"]
+[ext_resource type="AudioStream" uid="uid://ck5b5k00uvnyb" path="res://win sound/victory sound.wav" id="45_5roy8"]
+[ext_resource type="Texture2D" uid="uid://tjlprur2fywv" path="res://key_frag3_mini.png" id="45_dfv4n"]
+[ext_resource type="Texture2D" uid="uid://b4ijd4ier38b" path="res://key_frag4_mini.png" id="46_42f15"]
+[ext_resource type="Texture2D" uid="uid://bjvrcbxo8ohq2" path="res://key_frag5_mini.png" id="47_5roy8"]
+[ext_resource type="Script" uid="uid://btvwst35scx85" path="res://bg_music.gd" id="53_2p24a"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l52gh"]
+texture = ExtResource("2_a6qka")
+texture_region_size = Vector2i(35, 35)
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_5roy8"]
+vertices = PackedVector2Array(-8.92188, -17.5, 6.05469, -17.5, 4.14063, -3.1875, -8.92188, 10.1953, 17.5, 10.8359, 17.5, -4.14063)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 3, 2, 5)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8.92166, -17.5, -8.92166, 10.1962, 17.5, 10.8334, 17.5, -4.1422, 4.1422, -3.18631, 6.05399, -17.5)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_wjcpq"]
+vertices = PackedVector2Array(-6.6875, -17.5, 7.96875, -17.5, 4.78125, -3.1875, -5.41406, -3.82031, 17.5, 9.24219, -17.5, 9.5625, -17.5, -3.82031, 17.5, -2.86719)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 3, 2), PackedInt32Array(4, 2, 7)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-17.5, 9.55892, 17.5, 9.24029, 17.5, -2.86768, 4.77946, -3.18631, 7.96577, -17.5, -6.69124, -17.5, -5.41672, -3.82357, -17.5, -3.82357)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_2p24a"]
+vertices = PackedVector2Array(6.6875, 17.5, -5.41406, 17.5, -5.10156, -17.5, 6.6875, -17.5)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-5.09809, -17.5, -5.41672, 17.5, 6.69125, 17.5, 6.69125, -17.5)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_e05xb"]
+vertices = PackedVector2Array(-2.86719, -5.10156, -10.1953, -17.5, 9.875, -17.5, 8.92188, 17.5, -3.1875, 6.6875, -7.96875, 17.5, -17.5, 5.73438, -17.5, -5.41406)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(0, 2, 3, 4), PackedInt32Array(3, 5, 4), PackedInt32Array(0, 4, 6, 7)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(9.87756, -17.5, 8.92166, 17.5, -7.96576, 17.5, -3.18631, 6.69125, -17.5, 5.73536, -17.5, -5.41672, -2.86768, -5.09809, -10.1962, -17.5)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_csdwk"]
+vertices = PackedVector2Array(-7.32813, -17.5, 6.375, -17.5, 1.91406, -5.73438, -8.92188, 17.5, 1.27344, 6.375, 5.41406, 17.5, 17.5, 6.6875, 17.5, -6.05469)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 3), PackedInt32Array(4, 3, 2), PackedInt32Array(6, 4, 2, 7)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-7.32851, -17.5, -8.92166, 17.5, 5.41673, 17.5, 1.27452, 6.37262, 17.5, 6.69125, 17.5, -6.05398, 1.91179, -5.73535, 6.37262, -17.5)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_u7568"]
+vertices = PackedVector2Array(6.6875, 17.5, -7.96875, 17.5, -4.78125, 4.78125, 4.78125, 4.14063, -5.41406, -17.5, 6.6875, -17.5, 4.46094, -5.10156, -3.82031, -4.78125, -17.5, 5.10156, -17.5, -5.10156, 17.5, -4.78125, 17.5, 3.82031)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(2, 8, 9, 7, 3), PackedInt32Array(3, 7, 6, 10, 11)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-7.96576, 17.5, -4.77946, 4.77946, -17.5, 5.09809, -17.5, -5.09809, -3.82357, -4.77946, -5.41672, -17.5, 6.69125, -17.5, 4.46083, -5.09809, 17.5, -4.77946, 17.5, 3.82357, 4.77946, 4.1422, 6.69125, 17.5)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_vbyxd"]
+vertices = PackedVector2Array(9.5625, 10.1953, -17.5, 9.5625, -17.5, -9.5625, 7.96875, -9.875)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(7.96577, -9.87755, -17.5, -9.55892, -17.5, 9.55892, 9.55893, 10.1962)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_6bxx7"]
+vertices = PackedVector2Array(17.5, 10.8359, -10.5156, 10.1953, -8.92188, -9.875, 17.5, -10.8359)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8.92166, -9.87755, 17.5, -10.8334, 17.5, 10.8334, -10.5148, 10.1962)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_7j85n"]
+vertices = PackedVector2Array(17.5, -8.92188, 17.5, 8.28125, -17.5, 8.60156, -17.5, -9.24219)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-17.5, -9.24029, 17.5, -8.92166, 17.5, 8.2844, -17.5, 8.60303)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ctjrm"]
+vertices = PackedVector2Array(8.92188, -8.92188, 10.5156, 17.5, -10.5156, 17.5, -9.24219, -11.4688)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-9.24029, -11.4707, -10.5148, 17.5, 10.5148, 17.5, 8.92166, -8.92166)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_82dd2"]
+vertices = PackedVector2Array(9.5625, 17.5, -6.375, 17.5, -2.22656, 4.46094, 7.32813, -9.24219, -17.5, -8.28125, -17.5, 6.05469)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 3, 2, 5)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-17.5, -8.2844, 7.32851, -9.24029, 9.55893, 17.5, -6.37262, 17.5, -2.23041, 4.46083, -17.5, 6.05399)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_yexod"]
+vertices = PackedVector2Array(4.46094, 2.54688, 9.5625, 17.5, -8.28125, 17.5, -9.5625, -10.5156, 17.5, -11.4688, 17.5, 5.73438)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(0, 3, 4, 5)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-9.55892, -10.5148, 17.5, -11.4707, 17.5, 5.73536, 4.46083, 2.54905, 9.55893, 17.5, -8.2844, 17.5)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_dymxp"]
+vertices = PackedVector2Array(14.4844, 17.5, -14.4922, 17.5, -2.54688, 3.50781, 7.00781, 5.41406, -17.5, 11.4688, -17.5, -8.60156, 17.5, -9.5625, 17.5, 9.5625)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(2, 4, 5, 6), PackedInt32Array(3, 2, 6), PackedInt32Array(6, 7, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-17.5, -8.60303, 17.5, -9.55892, 17.5, 9.55892, 7.00988, 5.41672, 14.4844, 17.5, -14.4922, 17.5, -2.54905, 3.50494, -17.5, 11.4707)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_sjeho"]
+vertices = PackedVector2Array(10.8359, 9.24219, -9.5625, 8.92188, -7.64844, -17.5, 11.1484, -17.5)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-7.64714, -17.5, 11.1521, -17.5, 10.8334, 9.24029, -9.55892, 8.92166)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_e6r80"]
+vertices = PackedVector2Array(8.60156, 8.92188, -17.5, 11.1484, -17.5, -3.1875, -6.375, -3.1875, 9.5625, -17.5, -6.05469, -17.5)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3, 5)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(8.60303, 8.92166, 9.55892, -17.5, -6.05398, -17.5, -6.37261, -3.18631, -17.5, -3.18631, -17.5, 11.1521)])
+agent_radius = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_23pqe"]
+texture = ExtResource("18_ulosa")
+texture_region_size = Vector2i(35, 35)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-17.5, -17.5, 17.5, -17.5, 17.5, 17.5, -17.5, 17.5)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-17.5, 14.4986, 14.5169, 14.4804, 14.5391, -14.4961, -17.5, -14.4961, -17.5, -17.5, 17.5, -17.5, 17.5, 17.5, -17.5, 17.5)
+1:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_vbyxd")
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-17.5, 14.4991, 17.5, 14.4903, 17.5, 17.5, -17.5, 17.5)
+3:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(17.5, -14.5039, 17.5, -17.5, -17.5, -17.5, -17.5, -14.4805)
+3:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_7j85n")
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-17.5, 17.5, -14.5274, 17.5, -14.5313, -14.4961, 14.5274, -14.4943, 14.4832, 17.5, 17.5, 17.5, 17.5, -17.5, -17.5, -17.5)
+4:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_ctjrm")
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(14.5078, -14.5078, -17.5, -14.4922, -17.5, -17.5, 17.5, -17.5, 17.5, 17.5, 14.5639, 17.5)
+5:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-17.5, 14.5164, -14.5274, 14.4943, -14.5053, 17.5, -17.5, 17.5)
+5:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_82dd2")
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(17.5, -14.4991, -14.4502, -14.517, -14.5304, 17.5, -17.5, 17.5, -17.5, -17.5, 17.5, -17.5)
+6:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(14.5078, 14.4804, 17.5, 14.5169, 17.5, 17.5, 14.5078, 17.5)
+6:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_yexod")
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(17.5, -14.4991, -17.5, -14.5564, -17.5, -17.5, 17.5, -17.5)
+7:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-14.5495, 14.5164, -17.5, 14.4943, -17.5, 17.5, -14.4832, 17.5)
+7:0/0/physics_layer_0/polygon_2/points = PackedVector2Array(14.5078, 14.4804, 17.5, 14.5169, 17.5, 17.5, 14.5078, 17.5)
+7:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_dymxp")
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(14.5968, -17.5, 17.5, -17.5, 17.5, 17.5, -17.5, 17.5, -17.5, -17.5, -14.6801, -17.5, -14.5053, 14.5164, 14.4769, 14.4635)
+8:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_sjeho")
+9:0/0 = 0
+9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(14.5968, -17.5, 17.5, -17.5, 17.5, 17.5, -17.5, 17.5, -17.5, 14.4986, 14.4769, 14.4635)
+9:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-14.495, -14.5026, -14.4799, -17.5, -17.5, -17.5, -17.5, -14.5177)
+9:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_e6r80")
+10:0/0 = 0
+10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-14.5968, -17.5, -17.5, -17.5, -17.5, 17.5, 17.5, 17.5, 17.5, 14.5174, -14.4925, 14.4925)
+10:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(14.495, -14.5026, 14.4799, -17.5, 17.5, -17.5, 17.5, -14.5177)
+10:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_5roy8")
+11:0/0 = 0
+11:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-17.5, 14.4827, -17.5, 17.5, 17.5, 17.5, 17.5, 14.517)
+11:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(14.495, -14.5026, 14.4799, -17.5, 17.5, -17.5, 17.5, -14.5177)
+11:0/0/physics_layer_0/polygon_2/points = PackedVector2Array(-14.4871, -14.5026, -17.5, -14.517, -17.5, -17.5, -14.4769, -17.5)
+11:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_wjcpq")
+12:0/0 = 0
+12:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(14.4827, -17.5, 17.5, -17.5, 17.5, 17.5, 14.5564, 17.5)
+12:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-17.5, 17.5, -14.5385, 17.5, -14.4943, -17.5, -17.5, -17.5)
+12:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_2p24a")
+13:0/0 = 0
+13:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(14.4827, -17.5, 17.5, -17.5, 17.5, 17.5, 14.5564, 17.5)
+13:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-17.5, -14.5478, -14.5403, -14.4875, -14.4943, -17.5, -17.5, -17.5)
+13:0/0/physics_layer_0/polygon_2/points = PackedVector2Array(-17.5, 14.5177, -17.5, 17.5, -14.4799, 17.5, -14.4799, 14.5177)
+13:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_e05xb")
+14:0/0 = 0
+14:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-14.4827, -17.5, -17.5, -17.5, -17.5, 17.5, -14.5564, 17.5)
+14:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(17.5, -14.5478, 14.5403, -14.4875, 14.4943, -17.5, 17.5, -17.5)
+14:0/0/physics_layer_0/polygon_2/points = PackedVector2Array(17.5, 14.5177, 17.5, 17.5, 14.4799, 17.5, 14.4799, 14.5177)
+14:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_csdwk")
+15:0/0 = 0
+15:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-14.5101, 14.5026, -17.5, 14.5026, -17.5, 17.5, -14.4799, 17.5)
+15:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(17.5, -14.5478, 14.5403, -14.4875, 14.4943, -17.5, 17.5, -17.5)
+15:0/0/physics_layer_0/polygon_2/points = PackedVector2Array(17.5, 14.5177, 17.5, 17.5, 14.4799, 17.5, 14.4799, 14.5177)
+15:0/0/physics_layer_0/polygon_3/points = PackedVector2Array(-17.5, -17.5, -17.5, -14.5026, -14.495, -14.5478, -14.5101, -17.5)
+15:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_u7568")
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(17.5, 17.5, -17.5, 17.5, -17.5, -17.5, 17.5, -17.5, 17.5, -14.4986, -14.473, -14.4986, -14.5169, 14.4986, 17.5, 14.5826)
+2:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_6bxx7")
+
+[sub_resource type="TileSet" id="TileSet_23pqe"]
+tile_size = Vector2i(35, 35)
+physics_layer_0/collision_layer = 1
+navigation_layer_0/layers = 1
+sources/2 = SubResource("TileSetAtlasSource_23pqe")
+sources/0 = SubResource("TileSetAtlasSource_l52gh")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a6qka"]
+size = Vector2(14, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yb2iy"]
+size = Vector2(34, 34)
+
+[sub_resource type="LabelSettings" id="LabelSettings_l7tpm"]
+font_size = 48
+font_color = Color(0.0383972, 0.0383972, 0.0383972, 1)
+outline_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fb2tg"]
+bg_color = Color(0.137255, 0.137255, 0.137255, 0.811765)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_dfv4n"]
+font_size = 100
+font_color = Color(0.709804, 0, 0, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_m8yi8"]
+font_size = 100
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wjcpq"]
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_23pqe"]
+font_size = 50
+font_color = Color(0, 0, 0, 1)
+outline_size = 5
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ki042"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_uwtyj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_uwtyj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_r2nun")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_e3ork")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_0eiks")
+}],
+"loop": false,
+"name": &"ded",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_vw27k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_uobwo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_vw27k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_qap70")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_kkvae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_pvaed")
+}],
+"loop": true,
+"name": &"down_ghost",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_qbrjb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_kkvae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_pvaed")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_rjkov")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_rjkov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_v5gie")
+}],
+"loop": true,
+"name": &"left_ghost",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_v5gie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_dayq3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_wwis2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_vdp5t")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_dayq3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_wwis2")
+}],
+"loop": true,
+"name": &"right_ghost",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_3q6up")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_qjws7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_yb2iy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_qjws7")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_vdp5t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_3q6up")
+}],
+"loop": true,
+"name": &"up_ghost",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_42f15"]
+size = Vector2(24, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_unk43"]
+size = Vector2(22, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pvaed"]
+size = Vector2(13, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfv4n"]
+size = Vector2(11, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_anqga"]
+size = Vector2(20, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n0q3m"]
+size = Vector2(21, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p3kr3"]
+size = Vector2(22, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ydcu3"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_blkcc"]
+size = Vector2(18, 16)
+
+[node name="mon jeu" type="Node2D"]
+position = Vector2(69, -12)
+script = ExtResource("1_23pqe")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_23pqe")
+format = 2
+layer_0/name = "Layer1"
+layer_1/name = "Layer0"
+layer_1/z_index = 1
+layer_2/name = "Layer2"
+layer_2/z_index = 2
+
+[node name="Container" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="goal" type="Area2D" parent="Container"]
+metadata/_edit_group_ = true
+
+[node name="flag" type="Sprite2D" parent="Container/goal"]
+z_index = 1
+position = Vector2(-1, 0)
+texture = ExtResource("20_m8yi8")
+
+[node name="victory" type="CollisionShape2D" parent="Container/goal"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_a6qka")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Container/goal"]
+stream = ExtResource("45_5roy8")
+
+[node name="door" type="StaticBody2D" parent="Container"]
+
+[node name="door" type="Sprite2D" parent="Container/door"]
+z_index = 1
+texture = ExtResource("5_yb2iy")
+
+[node name="lock" type="CollisionShape2D" parent="Container/door"]
+shape = SubResource("RectangleShape2D_yb2iy")
+disabled = true
+
+[node name="Pause_menu" type="CanvasLayer" parent="."]
+process_mode = 3
+script = ExtResource("6_l7tpm")
+
+[node name="ColorRect" type="ColorRect" parent="Pause_menu"]
+modulate = Color(0.219608, 0.219608, 0.219608, 0.258824)
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Pause" type="Label" parent="Pause_menu"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -247.5
+offset_top = 26.0
+offset_right = 247.5
+offset_bottom = 163.0
+grow_horizontal = 2
+rotation = 0.00237839
+text = "Pause"
+label_settings = SubResource("LabelSettings_l7tpm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="hint" type="CheckButton" parent="Pause_menu"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.5
+offset_top = -88.5
+offset_right = 63.5
+offset_bottom = -57.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_pressed_color = Color(0.20871, 0.20871, 0.20871, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.207843, 0.207843, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.00184107, 0.00184107, 0.00184107, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+text = "hint Mode"
+
+[node name="restart" type="Button" parent="Pause_menu"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -27.0
+offset_right = 100.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("8_wjcpq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fb2tg")
+text = "Restart"
+
+[node name="Menu" type="Button" parent="Pause_menu"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = 50.5
+offset_right = 100.0
+offset_bottom = 100.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("8_wjcpq")
+text = "Menu"
+
+[node name="Game_Over" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="ColorRect" type="ColorRect" parent="Game_Over"]
+modulate = Color(0.219608, 0.219608, 0.219608, 0.258824)
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DeathLabel" type="Label" parent="Game_Over"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -332.0
+offset_top = -250.5
+offset_right = 332.0
+offset_bottom = 26.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.00237839
+text = "GAMER OVER 
+You Lost"
+label_settings = SubResource("LabelSettings_dfv4n")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="retry" type="Button" parent="Game_Over"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = 45.0
+offset_right = 100.0
+offset_bottom = 95.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("8_wjcpq")
+text = "Try again?
+"
+
+[node name="Menu" type="Button" parent="Game_Over"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = 122.5
+offset_right = 100.0
+offset_bottom = 172.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("8_wjcpq")
+text = "Menu"
+
+[node name="UI" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="ColorRect" type="ColorRect" parent="UI"]
+modulate = Color(0.219608, 0.219608, 0.219608, 0.258824)
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VictoryLabel" type="Label" parent="UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -247.5
+offset_top = -159.5
+offset_right = 247.5
+offset_bottom = -22.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.00237839
+text = "YOU WIN !"
+label_settings = SubResource("LabelSettings_m8yi8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="timerlabel" type="Label" parent="UI"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "00:00.0"
+label_settings = SubResource("LabelSettings_wjcpq")
+
+[node name="retry" type="Button" parent="UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = 45.0
+offset_right = 100.0
+offset_bottom = 95.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("8_wjcpq")
+text = "Again"
+
+[node name="Menu?" type="Button" parent="UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = 122.5
+offset_right = 100.0
+offset_bottom = 172.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("8_wjcpq")
+text = "Menu"
+
+[node name="FinalTime" type="Label" parent="UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.0
+offset_top = -50.5
+offset_right = 85.0
+offset_bottom = 18.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "00:00.0"
+label_settings = SubResource("LabelSettings_23pqe")
+
+[node name="key_sprites" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="Key" type="Sprite2D" parent="UI/key_sprites"]
+position = Vector2(143, -25)
+texture = ExtResource("5_rjkov")
+
+[node name="Key2" type="Sprite2D" parent="UI/key_sprites"]
+visible = false
+position = Vector2(143, -25)
+texture = ExtResource("6_qjws7")
+
+[node name="Key_frag1" type="Sprite2D" parent="UI/key_sprites"]
+visible = false
+z_index = 1
+position = Vector2(80, -28)
+texture = ExtResource("7_yb2iy")
+
+[node name="Key_frag2" type="Sprite2D" parent="UI/key_sprites"]
+visible = false
+z_index = 1
+position = Vector2(87, -23)
+texture = ExtResource("8_anqga")
+
+[node name="Key_frag3" type="Sprite2D" parent="UI/key_sprites"]
+visible = false
+z_index = 1
+position = Vector2(140, -25)
+texture = ExtResource("9_n0q3m")
+
+[node name="Key_frag4" type="Sprite2D" parent="UI/key_sprites"]
+visible = false
+z_index = 1
+position = Vector2(176, -15)
+texture = ExtResource("10_p3kr3")
+
+[node name="Key_frag5" type="Sprite2D" parent="UI/key_sprites"]
+visible = false
+z_index = 1
+position = Vector2(209, -15)
+texture = ExtResource("11_ydcu3")
+
+[node name="Camera2Dseparated" type="Camera2D" parent="."]
+script = ExtResource("4_m8yi8")
+
+[node name="buddy" type="CharacterBody2D" parent="."]
+position = Vector2(383, 307)
+script = ExtResource("1_tn8jo")
+metadata/_edit_group_ = true
+
+[node name="Camera2D" type="Camera2D" parent="buddy"]
+script = ExtResource("17_23pqe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="buddy"]
+process_mode = 3
+z_index = 2
+scale = Vector2(0.619048, 0.619048)
+sprite_frames = SubResource("SpriteFrames_ki042")
+animation = &"down"
+
+[node name="Area2D" type="Area2D" parent="buddy"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="buddy/Area2D"]
+z_index = 1
+shape = SubResource("RectangleShape2D_42f15")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="buddy"]
+z_index = 1
+shape = SubResource("RectangleShape2D_unk43")
+
+[node name="arrow" type="Sprite2D" parent="buddy"]
+position = Vector2(0, -19)
+scale = Vector2(0.38, 0.404762)
+texture = ExtResource("44_42f15")
+
+[node name="ActivateTimer" type="Timer" parent="buddy"]
+wait_time = 3.0
+one_shot = true
+
+[node name="FootstepTimer" type="Timer" parent="buddy"]
+wait_time = 0.5
+script = ExtResource("44_5roy8")
+
+[node name="footstepPlayer" type="AudioStreamPlayer2D" parent="buddy"]
+volume_db = -10.0
+max_distance = 2825.0
+attenuation = 3.24901
+panning_strength = 1.4
+bus = &"reverb"
+
+[node name="death" type="AudioStreamPlayer" parent="buddy"]
+process_mode = 3
+
+[node name="GameTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="ghost" type="CharacterBody2D" parent="."]
+position = Vector2(435, 463)
+script = ExtResource("34_pvaed")
+metadata/_edit_group_ = true
+
+[node name="kill" type="Area2D" parent="ghost"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ghost/kill"]
+z_index = 1
+shape = SubResource("RectangleShape2D_pvaed")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ghost"]
+process_mode = 3
+z_index = 2
+position = Vector2(0.0714312, -2.28882e-05)
+scale = Vector2(0.619048, 0.619048)
+sprite_frames = SubResource("SpriteFrames_ki042")
+animation = &"down_ghost"
+
+[node name="ActivateTimer" type="Timer" parent="ghost"]
+wait_time = 3.0
+one_shot = true
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="ghost"]
+path_desired_distance = 0.1
+target_desired_distance = 0.1
+path_max_distance = 10.0
+simplify_path = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ghost"]
+z_index = 1
+shape = SubResource("RectangleShape2D_dfv4n")
+one_way_collision_margin = 0.0
+
+[node name="FootstepTimer" type="Timer" parent="ghost"]
+wait_time = 0.5
+script = ExtResource("44_5roy8")
+
+[node name="footstepPlayer" type="AudioStreamPlayer2D" parent="ghost"]
+max_distance = 2825.0
+attenuation = 3.24901
+panning_strength = 1.4
+bus = &"reverb"
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(29, 33)
+metadata/_edit_group_ = true
+
+[node name="Key_frag1" type="Sprite2D" parent="Area2D"]
+z_index = 1
+texture = ExtResource("43_blkcc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_anqga")
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(8, -48)
+metadata/_edit_group_ = true
+
+[node name="Key_frag2" type="Sprite2D" parent="Area2D2"]
+z_index = 1
+texture = ExtResource("44_l7tpm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource("RectangleShape2D_n0q3m")
+
+[node name="Area2D3" type="Area2D" parent="."]
+position = Vector2(84, -32)
+metadata/_edit_group_ = true
+
+[node name="Key_frag3" type="Sprite2D" parent="Area2D3"]
+z_index = 1
+texture = ExtResource("45_dfv4n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+shape = SubResource("RectangleShape2D_p3kr3")
+
+[node name="Area2D4" type="Area2D" parent="."]
+position = Vector2(2, -33)
+metadata/_edit_group_ = true
+
+[node name="Key_frag4" type="Sprite2D" parent="Area2D4"]
+z_index = 1
+texture = ExtResource("46_42f15")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4"]
+shape = SubResource("RectangleShape2D_ydcu3")
+
+[node name="Area2D5" type="Area2D" parent="."]
+position = Vector2(67, -8)
+metadata/_edit_group_ = true
+
+[node name="Key_frag5" type="Sprite2D" parent="Area2D5"]
+z_index = 1
+texture = ExtResource("47_5roy8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D5"]
+shape = SubResource("RectangleShape2D_blkcc")
+
+[node name="MovingMazeTimer" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="bg music" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
+autoplay = true
+bus = &"reverb"
+script = ExtResource("53_2p24a")
+
+[connection signal="body_entered" from="Container/goal" to="buddy" method="_on_goal_body_entered"]
+[connection signal="toggled" from="Pause_menu/hint" to="." method="_on_check_button_toggled"]
+[connection signal="pressed" from="Pause_menu/restart" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="Game_Over/retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="UI/retry" to="." method="_on_retry_pressed"]
+[connection signal="body_entered" from="ghost/kill" to="ghost" method="_on_kill_body_entered"]
+[connection signal="body_entered" from="Area2D" to="buddy" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="buddy" method="_on_area_2d_2_body_entered"]
+[connection signal="body_entered" from="Area2D3" to="buddy" method="_on_area_2d_3_body_entered"]
+[connection signal="body_entered" from="Area2D4" to="buddy" method="_on_area_2d_4_body_entered"]
+[connection signal="body_entered" from="Area2D5" to="buddy" method="_on_area_2d_5_body_entered"]
+[connection signal="finished" from="bg music" to="bg music" method="_on_finished"]

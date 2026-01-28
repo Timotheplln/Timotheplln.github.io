@@ -1,0 +1,4 @@
+sauvegarder le son
+une touche de reporte bug
+refaire le texture du sol
+refaire les texture des murs et mettre un choix de theme dans les param (dongeon et backroom)

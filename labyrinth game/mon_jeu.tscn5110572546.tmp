@@ -1,0 +1,133 @@
+[gd_scene load_steps=20 format=3 uid="uid://b8csd07pc1csh"]
+
+[ext_resource type="Texture2D" uid="uid://csmf4j5nc3wkd" path="res://prototype_character_spitedown1.png" id="1_l380l"]
+[ext_resource type="Script" uid="uid://dwyqsma5wq48m" path="res://buddy.gd" id="1_tn8jo"]
+[ext_resource type="Texture2D" uid="uid://2keeenh1b74b" path="res://maze.png" id="3_2t41v"]
+[ext_resource type="Texture2D" uid="uid://nijyeid15b0k" path="res://prototype_character_spitedown2.png" id="3_unk43"]
+[ext_resource type="Texture2D" uid="uid://t8702j05cuu5" path="res://prototype_character_spitedown3.png" id="4_x58jb"]
+[ext_resource type="Texture2D" uid="uid://d3dq3qybcbaur" path="res://prototype_character_spiteleft1.png" id="5_dlidw"]
+[ext_resource type="Texture2D" uid="uid://dkmex6hlw5jsc" path="res://prototype_character_spiteleft2.png" id="6_8nbyj"]
+[ext_resource type="Texture2D" uid="uid://g3cr8uwtocss" path="res://prototype_character_spiteleft3.png" id="7_ulosa"]
+[ext_resource type="Texture2D" uid="uid://fnqxwu783f28" path="res://prototype_character_spiteleft4.png" id="8_23pqe"]
+[ext_resource type="Texture2D" uid="uid://cs0foido32237" path="res://prototype_character_spiteright1.png" id="9_m8yi8"]
+[ext_resource type="Texture2D" uid="uid://b2fkvmrb058ss" path="res://prototype_character_spiteright2.png" id="10_a6qka"]
+[ext_resource type="Texture2D" uid="uid://blu5y63x1rxyn" path="res://prototype_character_spiteright3.png" id="11_l52gh"]
+[ext_resource type="Texture2D" uid="uid://ci8asnbolc7a8" path="res://prototype_character_spiteright4.png" id="12_clbyu"]
+[ext_resource type="Texture2D" uid="uid://dc06r4i6ixwyx" path="res://prototype_character_spiteup1.png" id="13_1gks3"]
+[ext_resource type="Texture2D" uid="uid://dty1fq8sy7pxl" path="res://prototype_character_spiteup2.png" id="14_uwtyj"]
+[ext_resource type="Texture2D" uid="uid://kiivp27ebb5t" path="res://prototype_character_spiteup3.png" id="15_r2nun"]
+[ext_resource type="Script" uid="uid://pan8djxys1gh" path="res://maze.gd" id="17_8nbyj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ki042"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_l380l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_unk43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_l380l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_x58jb")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_dlidw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8nbyj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ulosa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_23pqe")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_m8yi8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_a6qka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_l52gh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_clbyu")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_uwtyj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_1gks3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_uwtyj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_r2nun")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_unk43"]
+size = Vector2(22, 27)
+
+[node name="mon jeu" type="Node2D"]
+position = Vector2(69, -12)
+
+[node name="buddy" type="CharacterBody2D" parent="."]
+position = Vector2(656, 591)
+script = ExtResource("1_tn8jo")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="buddy"]
+position = Vector2(0.0714312, -2.28882e-05)
+scale = Vector2(0.619048, 0.619048)
+sprite_frames = SubResource("SpriteFrames_ki042")
+animation = &"up"
+frame_progress = 0.755531
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="buddy"]
+position = Vector2(0.0714111, -0.642822)
+shape = SubResource("RectangleShape2D_unk43")
+
+[node name="Labyrinthe" type="StaticBody2D" parent="."]
+position = Vector2(1015, 15)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Labyrinthe"]
+position = Vector2(403, 322)
+scale = Vector2(1.85278, 1.85278)
+texture = ExtResource("3_2t41v")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Labyrinthe"]
+polygon = PackedVector2Array(156, 75, 155, 573, 373.675, 573, 529, 573, 528, 564, 165, 564, 164, 84, 271, 84, 271, 120, 201, 120, 201, 276, 200, 285, 211, 285, 211, 130, 272, 130, 271, 172, 251, 172, 251, 184, 370, 185, 370, 226, 305, 223, 305, 277, 315, 277, 315, 233, 370, 234, 372, 234, 372, 266, 346, 266, 346, 277, 451, 277, 451, 369, 347, 370, 347, 380, 462, 381, 460, 266, 385, 267, 381, 184, 545, 184, 544, 465, 263, 465, 262, 413, 253, 414, 253, 474, 551, 474, 554, 473, 554, 174, 284, 174, 282, 72)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Labyrinthe"]
+polygon = PackedVector2Array(645, 564, 576, 564, 576, 574, 653, 574, 652, 73, 327, 73, 328, 128, 595, 130, 598, 518, 210, 518, 211, 365, 306, 366, 305, 423, 502, 423, 501, 224, 431, 224, 431, 233, 493, 233, 493, 411, 313, 410, 316, 331, 357, 333, 355, 324, 303, 322, 304, 355, 264, 355, 262, 230, 252, 233, 254, 356, 211, 356, 210, 330, 201, 331, 201, 525, 606, 527, 607, 120, 337, 121, 338, 85, 644, 84)
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
+script = ExtResource("17_8nbyj")
+
+[node name="Camera2D" type="Camera2D" parent="."]

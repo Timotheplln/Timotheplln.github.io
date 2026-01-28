@@ -1,0 +1,695 @@
+[gd_scene load_steps=12 format=3 uid="uid://c0mprk7dlfhss"]
+
+[ext_resource type="Script" uid="uid://byljloju3gugm" path="res://menu.gd" id="1_lti8b"]
+[ext_resource type="Texture2D" uid="uid://ded4lew27m1h4" path="res://key.png" id="2_mae5d"]
+[ext_resource type="Texture2D" uid="uid://bnhkpemtuhgak" path="res://bigwall.png" id="2_ouk20"]
+[ext_resource type="Theme" uid="uid://cv2gw47fc1rb1" path="res://button theme.tres" id="2_ytr4m"]
+[ext_resource type="Script" uid="uid://dph80ujtg4jta" path="res://sprite_2d.gd" id="3_4hy44"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mae5d"]
+texture = ExtResource("2_ouk20")
+texture_region_size = Vector2i(35, 35)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-17.5, -17.5, 17.5, -17.5, 17.5, 17.5, -17.5, 17.5)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-17.5, 14.4986, 14.5169, 14.4804, 14.5313, -14.5078, -17.5, -14.4922, -17.5, -17.5, 17.5, -17.5, 17.5, 17.5, -17.5, 17.5)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(17.5, 17.5, -17.5, 17.5, -17.5, -17.5, 17.5, -17.5, 17.5, -14.4986, -14.473, -14.4986, -14.5169, 14.4986, 17.5, 14.5826)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(17.5, 14.4991, -17.5, 14.4903, -17.5, 17.5, 17.5, 17.5)
+3:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-17.5, -14.4903, -17.5, -17.5, 17.5, -17.5, 17.5, -14.4635)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-17.5, 17.5, -14.5274, 17.5, -14.5053, -14.4943, 14.5274, -14.4943, 14.4832, 17.5, 17.5, 17.5, 17.5, -17.5, -17.5, -17.5)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(14.4692, -14.4929, -17.5, -14.4903, -17.5, -17.5, 17.5, -17.5, 17.5, 17.5, 14.5639, 17.5)
+5:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-17.5, 14.5164, -14.5274, 14.4943, -14.5053, 17.5, -17.5, 17.5)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(17.5, -14.4991, -14.4502, -14.517, -14.5304, 17.5, -17.5, 17.5, -17.5, -17.5, 17.5, -17.5)
+6:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(14.5078, 14.4804, 17.5, 14.5169, 17.5, 17.5, 14.5078, 17.5)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(17.5, -14.4991, -17.5, -14.5564, -17.5, -17.5, 17.5, -17.5)
+7:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-14.5495, 14.5164, -17.5, 14.4943, -17.5, 17.5, -14.4832, 17.5)
+7:0/0/physics_layer_0/polygon_2/points = PackedVector2Array(14.5078, 14.4804, 17.5, 14.5169, 17.5, 17.5, 14.5078, 17.5)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(14.5968, -17.5, 17.5, -17.5, 17.5, 17.5, -17.5, 17.5, -17.5, -17.5, -14.6801, -17.5, -14.5053, 14.5164, 14.4769, 14.4635)
+9:0/0 = 0
+9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(14.5968, -17.5, 17.5, -17.5, 17.5, 17.5, -17.5, 17.5, -17.5, 14.4986, 14.4769, 14.4635)
+9:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-14.495, -14.5026, -14.4799, -17.5, -17.5, -17.5, -17.5, -14.5177)
+10:0/0 = 0
+10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-14.5968, -17.5, -17.5, -17.5, -17.5, 17.5, 17.5, 17.5, 17.5, 14.4903, -14.4769, 14.4635)
+10:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(14.495, -14.5026, 14.4799, -17.5, 17.5, -17.5, 17.5, -14.5177)
+11:0/0 = 0
+11:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-17.5, 14.4827, -17.5, 17.5, 17.5, 17.5, 17.5, 14.517)
+11:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(14.495, -14.5026, 14.4799, -17.5, 17.5, -17.5, 17.5, -14.5177)
+11:0/0/physics_layer_0/polygon_2/points = PackedVector2Array(-14.4871, -14.5026, -17.5, -14.517, -17.5, -17.5, -14.4769, -17.5)
+12:0/0 = 0
+12:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(14.4827, -17.5, 17.5, -17.5, 17.5, 17.5, 14.5564, 17.5)
+12:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-17.5, 17.5, -14.5385, 17.5, -14.4943, -17.5, -17.5, -17.5)
+13:0/0 = 0
+13:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(14.4827, -17.5, 17.5, -17.5, 17.5, 17.5, 14.5564, 17.5)
+13:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-17.5, -14.5478, -14.5403, -14.4875, -14.4943, -17.5, -17.5, -17.5)
+13:0/0/physics_layer_0/polygon_2/points = PackedVector2Array(-17.5, 14.5177, -17.5, 17.5, -14.4799, 17.5, -14.4799, 14.5177)
+14:0/0 = 0
+14:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-14.4827, -17.5, -17.5, -17.5, -17.5, 17.5, -14.5564, 17.5)
+14:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(17.5, -14.5478, 14.5403, -14.4875, 14.4943, -17.5, 17.5, -17.5)
+14:0/0/physics_layer_0/polygon_2/points = PackedVector2Array(17.5, 14.5177, 17.5, 17.5, 14.4799, 17.5, 14.4799, 14.5177)
+15:0/0 = 0
+15:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-14.5101, 14.5026, -17.5, 14.5026, -17.5, 17.5, -14.4799, 17.5)
+15:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(17.5, -14.5478, 14.5403, -14.4875, 14.4943, -17.5, 17.5, -17.5)
+15:0/0/physics_layer_0/polygon_2/points = PackedVector2Array(17.5, 14.5177, 17.5, 17.5, 14.4799, 17.5, 14.4799, 14.5177)
+15:0/0/physics_layer_0/polygon_3/points = PackedVector2Array(-17.5, -17.5, -17.5, -14.5026, -14.495, -14.5478, -14.5101, -17.5)
+
+[sub_resource type="TileSet" id="TileSet_4hy44"]
+tile_size = Vector2i(35, 35)
+physics_layer_0/collision_layer = 1
+sources/2 = SubResource("TileSetAtlasSource_mae5d")
+
+[sub_resource type="LabelSettings" id="LabelSettings_lti8b"]
+font_size = 100
+font_color = Color(0, 0, 0, 1)
+outline_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_4hy44"]
+font_size = 50
+font_color = Color(0, 0, 0, 1)
+outline_size = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_ytr4m"]
+font_size = 20
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_l48gv"]
+font_size = 24
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_lti8b")
+
+[node name="TileMap" type="TileMap" parent="."]
+z_index = -2
+position = Vector2(-8, -13)
+tile_set = SubResource("TileSet_4hy44")
+format = 2
+
+[node name="Layer1" type="TileMapLayer" parent="TileMap"]
+use_parent_material = true
+tile_set = SubResource("TileSet_4hy44")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="CanvasGroup" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/CanvasGroup"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -696.0
+offset_top = -338.0
+offset_right = -40.0
+offset_bottom = -201.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "The Lost path"
+label_settings = SubResource("LabelSettings_lti8b")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="PLAY" type="Button" parent="CanvasLayer/CanvasGroup"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -540.0
+offset_top = -115.0
+offset_right = -40.0
+offset_bottom = -65.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("2_ytr4m")
+text = "Regular"
+metadata/_edit_use_anchors_ = true
+
+[node name="Challenge" type="Button" parent="CanvasLayer/CanvasGroup"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -540.0
+offset_top = -40.0
+offset_right = -40.0
+offset_bottom = 10.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("2_ytr4m")
+text = "Challenges"
+metadata/_edit_use_anchors_ = true
+
+[node name="Settings" type="Button" parent="CanvasLayer/CanvasGroup"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -540.0
+offset_top = 35.0
+offset_right = -40.0
+offset_bottom = 85.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("2_ytr4m")
+text = "Settings"
+metadata/_edit_use_anchors_ = true
+
+[node name="Quit" type="Button" parent="CanvasLayer/CanvasGroup"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -540.0
+offset_top = 173.0
+offset_right = -40.0
+offset_bottom = 223.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("2_ytr4m")
+text = "Quit"
+metadata/_edit_use_anchors_ = true
+
+[node name="CanvasGroup2" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Back" type="Button" parent="CanvasLayer/CanvasGroup2"]
+layout_mode = 0
+offset_left = -500.0
+offset_top = 214.0
+offset_bottom = 264.0
+theme = ExtResource("2_ytr4m")
+text = "Back"
+metadata/_edit_use_anchors_ = true
+
+[node name="Easy" type="Button" parent="CanvasLayer/CanvasGroup2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -520.0
+offset_top = -236.0
+offset_right = -20.0
+offset_bottom = -176.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_ytr4m")
+text = "Easy
+5x5"
+metadata/_edit_use_anchors_ = true
+
+[node name="Normal" type="Button" parent="CanvasLayer/CanvasGroup2"]
+layout_mode = 0
+offset_left = -500.0
+offset_top = -116.0
+offset_bottom = -56.0
+theme = ExtResource("2_ytr4m")
+text = "Normal
+20x20"
+metadata/_edit_use_anchors_ = true
+
+[node name="Hard" type="Button" parent="CanvasLayer/CanvasGroup2"]
+layout_mode = 0
+offset_left = -500.0
+offset_top = -16.0
+offset_bottom = 44.0
+theme = ExtResource("2_ytr4m")
+text = "Hard
+100x100"
+metadata/_edit_use_anchors_ = true
+
+[node name="custom" type="Button" parent="CanvasLayer/CanvasGroup2"]
+layout_mode = 0
+offset_left = -500.0
+offset_top = 84.0
+offset_bottom = 144.0
+theme = ExtResource("2_ytr4m")
+text = "Custom"
+metadata/_edit_use_anchors_ = true
+
+[node name="custom_scene" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="width_choice" type="SpinBox" parent="CanvasLayer/custom_scene"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -106.563
+offset_top = -98.0
+offset_right = -20.0005
+offset_bottom = -67.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_ytr4m")
+metadata/_edit_use_anchors_ = true
+
+[node name="height_choice" type="SpinBox" parent="CanvasLayer/custom_scene"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -106.563
+offset_top = -29.0
+offset_right = -20.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_ytr4m")
+metadata/_edit_use_anchors_ = true
+
+[node name="Back" type="Button" parent="CanvasLayer/custom_scene"]
+layout_mode = 0
+offset_left = -500.0
+offset_top = 214.0
+offset_bottom = 264.0
+theme = ExtResource("2_ytr4m")
+text = "Back"
+metadata/_edit_use_anchors_ = true
+
+[node name="OK" type="Button" parent="CanvasLayer/custom_scene"]
+layout_mode = 0
+offset_left = -500.0
+offset_top = 94.0
+offset_bottom = 144.0
+theme = ExtResource("2_ytr4m")
+text = "OK"
+metadata/_edit_use_anchors_ = true
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Control"]
+position = Vector2(-170, -137)
+rotation = 0.174533
+scale = Vector2(2.6992, 2.83193)
+texture = ExtResource("2_mae5d")
+script = ExtResource("3_4hy44")
+
+[node name="Challenges" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Back" type="Button" parent="CanvasLayer/Challenges"]
+layout_mode = 0
+offset_left = -500.0
+offset_top = 214.0
+offset_bottom = 264.0
+theme = ExtResource("2_ytr4m")
+text = "Back"
+metadata/_edit_use_anchors_ = true
+
+[node name="inverted control" type="Button" parent="CanvasLayer/Challenges"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.5
+anchor_right = 0.5
+anchor_bottom = 1.5
+offset_left = -110.0
+offset_top = -195.0
+offset_right = 70.0
+offset_bottom = -155.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_ytr4m")
+text = "Inverted control"
+metadata/_edit_use_anchors_ = true
+
+[node name="unknown maze" type="Button" parent="CanvasLayer/Challenges"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.5
+anchor_right = 0.5
+anchor_bottom = 1.5
+offset_left = -110.0
+offset_top = -195.0
+offset_right = 70.0
+offset_bottom = -155.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_ytr4m")
+text = "Unknown maze"
+metadata/_edit_use_anchors_ = true
+
+[node name="blind maze" type="Button" parent="CanvasLayer/Challenges"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 2.375
+anchor_right = 0.5
+anchor_bottom = 2.375
+offset_left = -110.0
+offset_top = -120.0
+offset_right = 70.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_ytr4m")
+text = "Blind maze"
+metadata/_edit_use_anchors_ = true
+
+[node name="moving maze" type="Button" parent="CanvasLayer/Challenges"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = -0.375
+anchor_right = 0.5
+anchor_bottom = -0.375
+offset_left = -110.0
+offset_top = -45.0
+offset_right = 70.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_ytr4m")
+text = "Moving maze"
+metadata/_edit_use_anchors_ = true
+
+[node name="invisible maze" type="Button" parent="CanvasLayer/Challenges"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.5
+anchor_right = 0.5
+anchor_bottom = 1.5
+offset_left = -110.0
+offset_top = -120.0
+offset_right = 70.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_ytr4m")
+text = "Invisible maze"
+metadata/_edit_use_anchors_ = true
+
+[node name="escape the ghost (follower)" type="Button" parent="CanvasLayer/Challenges"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.5
+anchor_right = 0.5
+anchor_bottom = 1.5
+offset_left = -110.0
+offset_top = -45.0
+offset_right = 70.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_ytr4m")
+text = "Escape the ghost"
+metadata/_edit_use_anchors_ = true
+
+[node name="chase buddy" type="Button" parent="CanvasLayer/Challenges"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = -0.375
+anchor_right = 0.5
+anchor_bottom = -0.375
+offset_left = -110.0
+offset_top = 30.0
+offset_right = 70.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_ytr4m")
+text = "Chase buddy"
+metadata/_edit_use_anchors_ = true
+
+[node name="portals galore" type="Button" parent="CanvasLayer/Challenges"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 2.375
+anchor_right = 0.5
+anchor_bottom = 2.375
+offset_left = -110.0
+offset_top = 30.0
+offset_right = 70.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_ytr4m")
+text = "Portals galore"
+metadata/_edit_use_anchors_ = true
+
+[node name="piece the key" type="Button" parent="CanvasLayer/Challenges"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = -0.375
+anchor_right = 0.5
+anchor_bottom = -0.375
+offset_left = -110.0
+offset_top = 105.0
+offset_right = 70.0
+offset_bottom = 145.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_ytr4m")
+text = "Piece the key"
+metadata/_edit_use_anchors_ = true
+
+[node name="where is my camera" type="Button" parent="CanvasLayer/Challenges"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = -0.375
+anchor_right = 0.5
+anchor_bottom = -0.375
+offset_left = -110.0
+offset_top = 105.0
+offset_right = 70.0
+offset_bottom = 145.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_ytr4m")
+text = "Where am I?"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/Challenges"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -540.0
+offset_top = -327.0
+offset_right = -40.0
+offset_bottom = -258.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "CHALLENGES"
+label_settings = SubResource("LabelSettings_4hy44")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="choises" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="width_choice" type="SpinBox" parent="CanvasLayer/choises"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -36.0
+offset_right = 25.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.01339)
+theme = ExtResource("2_ytr4m")
+
+[node name="height_choice" type="SpinBox" parent="CanvasLayer/choises"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -36.0
+offset_right = 25.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.01339)
+theme = ExtResource("2_ytr4m")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/choises"]
+layout_mode = 0
+offset_left = -482.0
+offset_top = -205.0
+offset_bottom = -105.0
+color = Color(0.188235, 0.188235, 0.188235, 0.878431)
+
+[node name="Challenge description" type="Label" parent="CanvasLayer/choises/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 477.0
+offset_bottom = 95.0
+text = "challenge description"
+label_settings = SubResource("LabelSettings_ytr4m")
+horizontal_alignment = 3
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="hint" type="CheckButton" parent="CanvasLayer/choises"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -147.0
+offset_top = 12.0
+offset_right = -20.0
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_pressed_color = Color(0.20871, 0.20871, 0.20871, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.207843, 0.207843, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.00184107, 0.00184107, 0.00184107, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+text = "hint Mode"
+
+[node name="Back" type="Button" parent="CanvasLayer/choises"]
+layout_mode = 0
+offset_left = -500.0
+offset_top = 214.0
+offset_bottom = 264.0
+theme = ExtResource("2_ytr4m")
+text = "Back"
+
+[node name="OK" type="Button" parent="CanvasLayer/choises"]
+layout_mode = 0
+offset_left = -500.0
+offset_top = 94.0
+offset_bottom = 144.0
+theme = ExtResource("2_ytr4m")
+text = "OK"
+
+[node name="settings_menu" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Master" type="Label" parent="CanvasLayer/settings_menu"]
+layout_mode = 0
+offset_left = -500.0
+offset_top = -160.0
+offset_bottom = -126.0
+text = "Master"
+label_settings = SubResource("LabelSettings_l48gv")
+horizontal_alignment = 1
+
+[node name="volume" type="HSlider" parent="CanvasLayer/settings_menu"]
+layout_mode = 0
+offset_left = -500.0
+offset_top = -116.0
+offset_bottom = -100.0
+theme = ExtResource("2_ytr4m")
+max_value = 200.0
+value = 100.0
+
+[node name="victory" type="Label" parent="CanvasLayer/settings_menu"]
+layout_mode = 0
+offset_left = -500.0
+offset_top = -78.0
+offset_bottom = -44.0
+text = "Victory sound"
+label_settings = SubResource("LabelSettings_l48gv")
+horizontal_alignment = 1
+
+[node name="volume_victory" type="HSlider" parent="CanvasLayer/settings_menu"]
+layout_mode = 0
+offset_left = -500.0
+offset_top = -34.0
+offset_bottom = -18.0
+theme = ExtResource("2_ytr4m")
+value = 100.0
+
+[node name="erase_save" type="Button" parent="CanvasLayer/settings_menu"]
+layout_mode = 0
+offset_left = -500.0
+offset_top = 2.0
+offset_bottom = 52.0
+theme = ExtResource("2_ytr4m")
+text = "Erase your save"
+
+[node name="Back" type="Button" parent="CanvasLayer/settings_menu"]
+layout_mode = 0
+offset_left = -500.0
+offset_top = 75.0
+offset_bottom = 125.0
+theme = ExtResource("2_ytr4m")
+text = "Back"
+
+[connection signal="mouse_entered" from="CanvasLayer/Challenges/inverted control" to="." method="_on_inverted_control_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Challenges/inverted control" to="." method="_on_inverted_control_mouse_exited"]
+[connection signal="toggled" from="CanvasLayer/choises/hint" to="." method="_on_hint_toggled"]
+[connection signal="pressed" from="CanvasLayer/settings_menu/erase_save" to="." method="_on_erase_save_pressed"]
