@@ -16,6 +16,17 @@
                     Contact </span>
                 </a>
             </li>
+            <li class="nav-item dropdown">
+                <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">
+                    <span class="caret">Mes Projets</span>
+                </a>
+                
+                <ul class="dropdown-menu" role="menu">
+                    <li class="article_title">
+                        <a href="article.php"></a>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </nav>
 </header>
