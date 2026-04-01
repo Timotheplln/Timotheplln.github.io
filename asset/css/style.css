@@ -132,3 +132,14 @@ article {
     background-color: #444;
     color: #ff9100;
 }
+
+.projets{
+    background-color: #333;
+    border: 0.2px solid #ff9100;
+    border-radius: 5px;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #ff9100;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
